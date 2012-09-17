@@ -1,0 +1,3 @@
+* rbenv Global installieren. Ist zur Zeit unter dem vagrant user deployt
+  => ich habe ruby193 direkt installiert, wie im Buch beschrieben
+* bundle unter rbenv
