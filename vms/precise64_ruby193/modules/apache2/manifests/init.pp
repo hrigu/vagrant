@@ -5,11 +5,13 @@ class apache2 {
 
   package { "apache2":
       ensure => present,
+      before => File["/etc/apache2/conf"]                       #ensures the package is installed before our custom config file is copied in.
   }
 
   service { "apache2":
       ensure    => running,
       require   => Package["apache2"],
+      subscribe => File["/etc/apache2/conf"]                    #puppet notifies the service when config changes happen
   }
 
     file { "/etc/apache2/conf":
